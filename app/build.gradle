@@ -13,6 +13,17 @@ android {
         vectorDrawables.useSupportLibrary = true
 
     }
+
+    signingConfigs {
+        release {
+            storeFile file("music_parser.jks")
+            storePassword "55668899"
+            keyAlias "bruceewu"
+            keyPassword "55668899"
+            v2SigningEnabled false
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false
