@@ -1,6 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorPrimary">@color/primary_black</color>
+    <color name="colorPrimaryDark">#333333</color>
+    <color name="colorAccent">@color/primary_black</color>
+
+    <!--常用颜色-->
+    <color name="transparent">#00000000</color>
+    <color name="primary_black">#333333</color>
+    <color name="primary_red">#FF4E4E</color>
+    <color name="primary_white">#FFFFFF</color>
+    <color name="global_grey">#F7F7F7</color>
+    <color name="divider_line_color">#DADADA</color>
+    <color name="primary_grey_text_2">#BFBFBF</color>
+    <color name="primary_tab_color">#8A8A8A</color>
+    <color name="primary_grey_text">#7E7E7E</color>
+    <color name="primary_yellow">#FFA82D</color>
+    <color name="primary_green">#44DB5E</color>
+    <color name="primary_yellow_light">#FEDC5D</color>
+    <color name="act_bg">#FFEEBD</color>
+
+    <!--特殊需求,不常用-->
+    <color name="blue_btn_bg_color">#22B573</color>
+    <color name="blue_btn_bg_pressed_color">#1A945D</color>
+    <color name="primary_blue">#1D5DAF</color>
+    <color name="primary_fcode_need">#77FF4E4E</color>
+    <color name="fcode_state_color_red">#FEEDED</color>
+    <color name="bonus_send_bg">#FFFAF4</color>
+    <color name="gray_btn_bg_color">#D0D0D0</color>
+    <color name="line">#D2D2D2</color>
+    <color name="primary_tab_text_color_unsel">#AAF7F7F7</color>
+    <color name="gray_btn_bg_pressed_color">#B6B6B6</color>
+    <color name="trans_success_stroke_color">#33A5DC86</color>
+    <color name="color_msg_system_time_bg">#20000000</color>
+    <color name="primary_black_trans">#55333333</color>
+    <color name="red_btn_bg_color">#DD6B55</color>
+    <color name="error_stroke_color">#F27474</color>
+    <color name="red_btn_bg_pressed_color">#CD5B55</color>
+    <color name="bargain_timer_back">#99FF8A03</color>
+
+    <!--二次引用-reference-->
+    <color name="price_promotion">@color/primary_black</color>
+    <color name="price_grey">@color/primary_grey_text</color>
+    <color name="text_black">@color/primary_black</color>
+    <color name="primary_status_bar">@color/primary_black</color>
+    <color name="primary_out_of_storage">@color/primary_black</color>
+    <color name="warning_stroke_color">@color/primary_yellow</color>
+    <color name="primary_add_cart_color">#D3BB7E</color>
+    <color name="dot_selected">@color/primary_black_trans</color>
+    <color name="success_stroke_color">@color/primary_green</color>
+    <color name="bonus_reduce">@color/primary_green</color>
+    <color name="__picker_item_photo_border_selected">@color/primary_green</color>
+    <color name="primary_state_done">@color/primary_green</color>
+    <color name="primary_grey_background">@color/global_grey</color>
+    <color name="primary_tab_text_color_sel">@color/primary_white</color>
+    <color name="dot_unselected">@color/global_grey</color>
+    <color name="primary_toolbar">@color/global_grey</color>
+    <color name="primary_grey_placeholder">@color/global_grey</color>
+    <color name="primary_login_grey_text">@color/primary_grey_text_2</color>
+    <color name="primary_fcode_cover">@color/primary_tab_text_color_unsel</color>
+    <color name="primary_btn_frame">@color/primary_tab_color</color>
+    <color name="ripple_background">@color/click_background</color>
+    <color name="click_background">@color/primary_grey_text</color>
+    <color name="bonus_holder_unsel">@color/primary_grey_text</color>
 </resources>

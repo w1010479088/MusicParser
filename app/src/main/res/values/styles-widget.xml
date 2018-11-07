@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="ToolBarEx">
+        <attr name="toolbar_title" format="string" />
+        <attr name="toolbar_back" format="boolean" />
+        <attr name="toolbar_menu_title" format="string" />
+        <attr name="toolbar_menu_drawable" format="reference" />
+        <attr name="toolbar_back_click_drawable" format="reference" />
+        <attr name="toolbar_background_color" format="color" />
+        <attr name="toolbar_background_enable" format="boolean" />
+        <attr name="toolbar_filter_color" format="color" />
+    </declare-styleable>
+</resources>
