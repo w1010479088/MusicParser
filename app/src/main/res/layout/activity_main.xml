@@ -9,37 +9,30 @@
 
     <Button
         android:id="@+id/btn_1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:elevation="10dp"
-        android:text="开始解析"
-        android:textColor="@color/primary_black"
-        android:textSize="12sp" />
+        style="@style/button_style"
+        android:text="开始解析" />
 
     <Button
         android:id="@+id/btn_2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:elevation="10dp"
-        android:text="删除缓存"
-        android:textColor="@color/primary_black"
-        android:textSize="12sp" />
+        style="@style/button_style"
+        android:layout_below="@+id/btn_1"
+        android:text="删除缓存" />
 
     <Button
         android:id="@+id/btn_3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:elevation="10dp"
-        android:text="删除Log"
-        android:textColor="@color/primary_black"
-        android:textSize="12sp" />
+        style="@style/button_style"
+        android:layout_below="@+id/btn_2"
+        android:text="删除Log" />
+
+    <Button
+        android:id="@+id/btn_4"
+        style="@style/button_style"
+        android:layout_below="@+id/btn_3"
+        android:text="打开文件夹" />
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/btn_1">
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"

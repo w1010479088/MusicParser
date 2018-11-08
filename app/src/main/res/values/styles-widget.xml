@@ -11,4 +11,14 @@
         <attr name="toolbar_background_enable" format="boolean" />
         <attr name="toolbar_filter_color" format="color" />
     </declare-styleable>
+
+    <style name="button_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/primary_black</item>
+        <item name="android:elevation">10dp</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:layout_alignParentEnd">true</item>
+        <item name="android:alpha">0.5</item>
+    </style>
 </resources>

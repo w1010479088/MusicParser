@@ -2,9 +2,12 @@ package com.example.musicparser;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.annotation.NonNull;
+import android.support.v4.content.FileProvider;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.widget.TextView;
@@ -46,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.btn_1).setOnClickListener(v -> run());
         findViewById(R.id.btn_2).setOnClickListener(v -> delCache());
         findViewById(R.id.btn_3).setOnClickListener(v -> clearLog());
+        findViewById(R.id.btn_4).setOnClickListener(v -> openDir());
     }
 
     private void run() {
@@ -132,6 +136,23 @@ public class MainActivity extends AppCompatActivity {
 
     private boolean needFile(File file) {
         return file != null && file.isFile() && file.getName().endsWith(END_FIX) && file.length() >= MIN_SIZE;
+    }
+
+    private void openDir() {
+        File file = new File(OUTPUT_PATH);
+        if (!file.exists() || !file.isDirectory()) {
+            return;
+        }
+        try {
+            Uri uri = FileProvider.getUriForFile(this, this.getApplicationContext().getPackageName() + ".provider", file);
+            Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+            intent.addCategory(Intent.CATEGORY_DEFAULT);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent.setDataAndType(uri, "*/*");
+            startActivity(intent);
+        } catch (Exception e) {
+            log(e.getMessage());
+        }
     }
 
     @SuppressLint("SimpleDateFormat")
