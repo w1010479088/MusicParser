@@ -57,14 +57,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void test() {
-        String path = ROOT_PATH + "/Music/好心分手.mp3";
+        String path = ROOT_PATH + "/Music/寂寞星球的玫瑰.mp3";
         int[] keys = {
                 MediaMetadataRetriever.METADATA_KEY_TITLE,
                 MediaMetadataRetriever.METADATA_KEY_ARTIST,
                 MediaMetadataRetriever.METADATA_KEY_ALBUM,
-                MediaMetadataRetriever.METADATA_KEY_AUTHOR,
-                MediaMetadataRetriever.METADATA_KEY_ALBUMARTIST,
-                MediaMetadataRetriever.METADATA_KEY_COMPOSER,
         };
         List<String> values = new NameParser().parse(path, keys);
         for (String value : values) {
