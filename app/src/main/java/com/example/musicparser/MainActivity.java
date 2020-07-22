@@ -3,6 +3,7 @@ package com.example.musicparser;
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.media.MediaMetadataRetriever;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -13,6 +14,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.widget.TextView;
 
+import com.example.musicparser.music.NameParser;
 import com.example.musicparser.music.NetEaseParser;
 import com.example.musicparser.music.OnParseListener;
 import com.example.musicparser.util.IOUtil;
@@ -33,8 +35,9 @@ import permissions.dispatcher.RuntimePermissions;
 public class MainActivity extends AppCompatActivity {
     public static final String PERMISSION_READ_EXTERNAL_STORAGE = Manifest.permission.READ_EXTERNAL_STORAGE;
     public static final String PERMISSION_WRITE_EXTERNAL_STORAGE = Manifest.permission.WRITE_EXTERNAL_STORAGE;
-    private static final String INPUT_PATH = Environment.getExternalStorageDirectory().getPath() + "/netease/cloudmusic/Cache/Music1/";
-    private static final String OUTPUT_PATH = Environment.getExternalStorageDirectory().getPath() + "/网易云音乐解码/";
+    private static final String ROOT_PATH = Environment.getExternalStorageDirectory().getPath();
+    private static final String INPUT_PATH = ROOT_PATH + "/netease/cloudmusic/Cache/Music1/";
+    private static final String OUTPUT_PATH = ROOT_PATH + "/网易云音乐解码/";
     private static final String SAVE_TIP = "解码之后的文件放在:\"网易云音乐解码\"的文件夹里.\n\n";
     private StringBuilder mLog = new StringBuilder(SAVE_TIP);
     private static final int MIN_SIZE = 2 * 1024 * 1024;
@@ -50,6 +53,23 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.btn_2).setOnClickListener(v -> delCache());
         findViewById(R.id.btn_3).setOnClickListener(v -> clearLog());
         findViewById(R.id.btn_4).setOnClickListener(v -> openDir());
+        findViewById(R.id.btn_5).setOnClickListener(v -> test());
+    }
+
+    private void test() {
+        String path = ROOT_PATH + "/Music/好心分手.mp3";
+        int[] keys = {
+                MediaMetadataRetriever.METADATA_KEY_TITLE,
+                MediaMetadataRetriever.METADATA_KEY_ARTIST,
+                MediaMetadataRetriever.METADATA_KEY_ALBUM,
+                MediaMetadataRetriever.METADATA_KEY_AUTHOR,
+                MediaMetadataRetriever.METADATA_KEY_ALBUMARTIST,
+                MediaMetadataRetriever.METADATA_KEY_COMPOSER,
+        };
+        List<String> values = new NameParser().parse(path, keys);
+        for (String value : values) {
+            log(value + "\n");
+        }
     }
 
     private void run() {

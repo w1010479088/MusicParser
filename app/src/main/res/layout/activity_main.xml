@@ -30,6 +30,12 @@
         android:layout_below="@+id/btn_3"
         android:text="打开文件夹" />
 
+    <Button
+        android:id="@+id/btn_5"
+        style="@style/button_style"
+        android:layout_below="@+id/btn_4"
+        android:text="测试" />
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
