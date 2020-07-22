@@ -8,13 +8,13 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.support.annotation.NonNull;
 import android.support.v4.content.FileProvider;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.widget.TextView;
 
 import com.example.musicparser.music.NetEaseParser;
 import com.example.musicparser.music.OnParseListener;
-import com.example.musicparser.util.FunctorHelper;
 import com.example.musicparser.util.IOUtil;
 
 import java.io.File;
@@ -199,6 +199,12 @@ public class MainActivity extends AppCompatActivity {
 
     @OnShowRationale({PERMISSION_READ_EXTERNAL_STORAGE, PERMISSION_WRITE_EXTERNAL_STORAGE})
     public void showRationalForStorage(final PermissionRequest request) {
-        FunctorHelper.needPermission(this, request);
+        new AlertDialog.Builder(this)
+                .setTitle("权限申请提示")
+                .setMessage("解码音乐之后需要存储音乐副本,请您同意存储权限的申请.")
+                .setPositiveButton("知道了", (dialog, which) -> request.proceed())
+                .setNegativeButton("拒绝", (dialog, which) -> request.cancel())
+                .setCancelable(false)
+                .show();
     }
 }
